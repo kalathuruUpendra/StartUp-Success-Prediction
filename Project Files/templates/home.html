@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Success Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #5f72bd, #9b23ea);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            grid-column: span 2;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #5f72bd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #4b5da8;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+            button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Startup Success Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <div class="form-group">
+            <label>Age First Funding Year</label>
+            <input type="number" step="any" name="age_first_funding_year" required>
+        </div>
+
+        <div class="form-group">
+            <label>Age Last Funding Year</label>
+            <input type="number" step="any" name="age_last_funding_year" required>
+        </div>
+
+        <div class="form-group">
+            <label>Age First Milestone Year</label>
+            <input type="number" step="any" name="age_first_milestone_year" required>
+        </div>
+
+        <div class="form-group">
+            <label>Age Last Milestone Year</label>
+            <input type="number" step="any" name="age_last_milestone_year" required>
+        </div>
+
+        <div class="form-group">
+            <label>Relationships</label>
+            <input type="number" step="any" name="relationships" required>
+        </div>
+
+        <div class="form-group">
+            <label>Funding Rounds</label>
+            <input type="number" step="any" name="funding_rounds" required>
+        </div>
+
+        <div class="form-group">
+            <label>Total Funding (USD)</label>
+            <input type="number" step="any" name="funding_total_usd" required>
+        </div>
+
+        <div class="form-group">
+            <label>Milestones</label>
+            <input type="number" step="any" name="milestones" required>
+        </div>
+
+        <div class="form-group">
+            <label>Average Participants</label>
+            <input type="number" step="any" name="avg_participants" required>
+        </div>
+
+        <button type="submit">Predict Startup Success</button>
+
+    </form>
+</div>
+
+</body>
+</html>
